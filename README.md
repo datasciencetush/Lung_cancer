@@ -11,6 +11,3 @@ python script.py
 dvc init
 dvc repro
 dvc dag
-
-290297833523.dkr.ecr.us-east-1.amazonaws.com/lung_cancer
-290297833523.dkr.ecr.us-east-1.amazonaws.com/lung_cancer
