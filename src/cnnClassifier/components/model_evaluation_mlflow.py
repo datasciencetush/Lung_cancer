@@ -5,7 +5,11 @@ import mlflow.keras
 from urllib.parse import urlparse
 from cnnClassifier.entity.config_entity import EvaluationConfig
 from cnnClassifier.utils.common import read_yaml, create_directories,save_json
+import os
 
+os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/datasciencetush/Lung_cancer.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"] = "datasciencetush"
+os.environ["MLFLOW_TRACKING_PASSWORD"] = "5cfe7f0ea40c2fc1fdd48cdadf16725e4dde0c07"
 
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
@@ -62,6 +66,7 @@ class Evaluation:
             mlflow.log_metrics(
                 {"loss": self.score[0], "accuracy": self.score[1]}
             )
+            print('hey1')
             # Model registry does not work with file store
             if tracking_url_type_store != "file":
 
@@ -71,4 +76,5 @@ class Evaluation:
                 # https://mlflow.org/docs/latest/model-registry.html#api-workflow
                 mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
             else:
+                print('hey')
                 mlflow.keras.log_model(self.model, "model")
