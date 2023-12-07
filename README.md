@@ -11,3 +11,6 @@ python script.py
 dvc init
 dvc repro
 dvc dag
+
+
+290297833523.dkr.ecr.ap-south-1.amazonaws.com/final_chest
