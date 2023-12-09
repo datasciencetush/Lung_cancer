@@ -13,4 +13,4 @@ dvc repro
 dvc dag
 
 
-290297833523.dkr.ecr.ap-south-1.amazonaws.com/final_chest
+290297833523.dkr.ecr.ap-south-1.amazonaws.com/chest_t1
